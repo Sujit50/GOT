@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon server.babel.js"
+    "start": "node server.babel.js"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",

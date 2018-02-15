@@ -4,15 +4,16 @@ import _ from 'underscore';
 export default class BattleController {
     getDistinctLocation(req, res) {
         BattleModel.distinct('location', { location: { $ne: '' } }, function (err, battle) {
-            if (err) res.json({ status: 'error', message: err });
-            res.json({ status: 'success', data: battle });
+            if (err) return res.json({ status: 'error', message: err });
+            return res.json({ status: 'success', data: battle });
+            console.log('asd')
         });
     }
 
     getBattleCount(req, res) {
         BattleModel.count({}, function (err, count) {
-            if (err) res.json({ status: 'error', message: err });
-            res.json({status: 'success', count: count});
+            if (err) return res.json({ status: 'error', message: err });
+            return res.json({status: 'success', count: count});
         });
     }
 
@@ -43,8 +44,8 @@ export default class BattleController {
 
     getSearchResults(req, res) {
         BattleModel.apiQuery(req.query, function (err, data) {
-            if (err) res.json({ status: 'error', message: err });
-            res.json({ status: 'success', data: data });
+            if (err) return res.json({ status: 'error', message: err });
+            return res.json({ status: 'success', data: data });
         });
     }
 
