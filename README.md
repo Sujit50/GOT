@@ -3,7 +3,7 @@
 >Installation
 ```
 Take git clone
-Run nmp install
+Run npm install
 ```
 
 >Setup
